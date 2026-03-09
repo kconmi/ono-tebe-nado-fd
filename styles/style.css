@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
-  height: 293px;
   color: #000;
 }
 
@@ -16,7 +15,7 @@
 }
 
 .header__logo {
-  margin: 92px 0 96px;
+  margin: 92px 0;
 }
 
 .header__logo-image {
@@ -32,14 +31,17 @@
   text-decoration: none;
 }
 
-.header__address {
+.address {
   display: flex;
   flex-direction: column;
-  max-width: 230px;
-  margin: 95px 50px auto 186px;
   font-size: 18px;
   font-style: normal;
   line-height: 24px;
+}
+
+.address-block__header{
+  max-width: 230px;
+  margin: 95px 50px auto 186px;
 }
 
 .address__address-text {
@@ -47,55 +49,50 @@
 }
 
 .cover {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 757px;
-  background: url("/images/cover.jpg") center / cover no-repeat;
+  min-height: 757px;
+  padding: 60px 50px 50px 50px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background: url("../images/cover.jpg") center / cover no-repeat;
   background-color: rgba(0, 0, 0, 0.6);
   background-blend-mode: darken;
 }
 
 .cover__headline {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  height: 385px;
-  margin: 165px 0 207px;
+  align-self: center;
+  display: grid;
+  row-gap: 20px;
+  margin: 0;
   color: #fff;
-  font-weight: bold;
   font-size: 100px;
   line-height: 1.15;
+  font-weight: 700;
   letter-spacing: 30px;
   text-transform: uppercase;
 }
 
 .cover__headline-line_aligned_left {
-  margin: 0 0 0 50px;
+  justify-self: start;
 }
 
 .cover__headline-line_aligned_center {
-  align-self: center;
-  margin: 0 0 0 30px;
+  justify-self: center;
+  margin: 0 -30px 0 0; 
 }
 
 .cover__headline-line_aligned_right {
-  align-self: flex-end;
-  margin: 0 20px 0 0;
+  justify-self: end;
+  margin: 0 -30px 0 0; 
 }
 
 .cover__description {
-  position: absolute;
-  bottom: 50px;
   display: flex;
   justify-content: space-between;
   align-content: center;
   width: 1000px;
   color: #fff;
   font-size: 22px;
-  line-height: 1.28;
+  line-height: 1.27;
   text-transform: uppercase;
 }
 
@@ -111,7 +108,6 @@
 }
 
 .lots {
-  height: 723px;
   margin: 180px 24px 0;
 }
 
@@ -123,13 +119,9 @@
 
 .lots__cards {
   display: flex;
-  justify-content: space-between;
+  gap: 25px;
   list-style: none;
-}
-
-.lots__card {
-  width: 334px;
-  height: 596px;
+  flex-wrap: wrap;
 }
 
 .lots__card-link {
@@ -137,22 +129,26 @@
   text-decoration: none;
 }
 
-.lots__card_film {
-  background: url("/images/card-lot-01.jpg") center / cover no-repeat;
+.lots__card {
+  width: 334px;
+  min-height: 596px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.6);
   background-blend-mode: darken;
+}
+
+.lots__card_film {
+  background-image: url("../images/card-lot-01.jpg");
 }
 
 .lots__card_book {
-  background: url("/images/card-lot-02.jpg") center / cover no-repeat;
-  background-color: rgba(0, 0, 0, 0.6);
-  background-blend-mode: darken;
+  background-image: url("../images/card-lot-02.jpg");
 }
 
 .lots__card_art {
-  background: url("/images/card-lot-03.jpg") center / cover no-repeat;
-  background-color: rgba(0, 0, 0, 0.6);
-  background-blend-mode: darken;
+  background-image: url("../images/card-lot-03.jpg");
 }
 
 .card {
@@ -183,11 +179,11 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 1.2;
+  max-width: fit-content;
 }
 
 .about {
   display: flex;
-  height: 595px;
   margin: 120px 24px 180px;
 }
 
@@ -214,30 +210,27 @@
 }
 
 .about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about__paragraph {
   display: block;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
 }
 
-.about__text:first-of-type {
-  margin: 0 3px 24px 0;
-}
-
 .footer {
   display: flex;
   justify-content: space-between;
-  height: 180px;
   padding: 0 50px;
   font-size: 18px;
 }
 
-.footer__address {
-  display: flex;
-  flex-direction: column;
+.address-block__footer {
   width: 244px;
-  font-style: normal;
-  line-height: 24px;
 }
 
 .footer__nav-list {
